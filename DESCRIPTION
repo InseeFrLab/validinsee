@@ -1,0 +1,26 @@
+Package: validinsee
+Type: Package
+Title: Validation Insee
+Version: 0.0.0.9000
+Suggests: testthat
+Authors@R: c(
+      person(
+        "Pierre-Yves", "Berrard",
+        email = "pierre-yves.berrard@insee.fr",
+        role = c("aut", "cre")
+      ),
+      person(
+        family = "Institut National de la Statistique et des Études Économiques",
+        role = "cph"
+      )
+    )
+Description: Validation de données produites par l'Insee (numéros Siren ou
+    Siret...)
+Language: fr
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+URL: https://inseefrlab.github.io/validinsee, https://github.com/InseeFrLab/validinsee
+BugReports: https://github.com/InseeFrLab/validinsee/issues
