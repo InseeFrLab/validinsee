@@ -53,6 +53,8 @@ somme_luhn <- function(id_int) {
 
 validation_sirene <- function(id, type = c("siret", "siren")) {
 
+  if (all(is.na(id))) return(id)
+
   type <- match.arg(type)
 
   res <- rep(NA, length(id))
@@ -62,12 +64,18 @@ validation_sirene <- function(id, type = c("siret", "siren")) {
   else
     looks_ok <- grepl("^\\d{9}$", id)
 
+  if (!any(looks_ok))
+    warning(
+      "aucun id ne comporte le bon nombre de chiffres ",
+      sprintf("(essayer `type = \"%s\"` ?)", chartr("nt", "tn", type))
+    )
+
   res[!looks_ok & !is.na(id)] <- FALSE
   if (all(!looks_ok)) return(res)
 
   id <- id[looks_ok]
 
-  # matrice numérique
+  # transformation en matrice numérique pour somme_luhn()
   mat_id_num <-
     matrix(
       as.integer(unlist(strsplit(id, ""))),

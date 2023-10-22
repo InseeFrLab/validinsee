@@ -35,13 +35,18 @@ test_that("somme_luhn", {
 
 test_that("validation_sirene (type siren)", {
 
+  expect_warning(
+    validation_sirene(c("1", NA), type = "siren"),
+    "(essayer `type = \"siret\"` ?)"
+  )
+
   expect_equal(
-    validation_sirene(c("42", NA), type = "siren"),
+    validation_sirene(c("100000000", NA), type = "siren"),
     c(FALSE, NA)
   )
 
   expect_equal(
-    validation_sirene(c("42", "43", "a"), type = "siren"),
+    validation_sirene(c("100000000", "43", "a"), type = "siren"),
     c(FALSE, FALSE, FALSE)
   )
 
@@ -64,9 +69,14 @@ test_that("validation_sirene (type siren)", {
 
 test_that("validation_sirene (type siret)", {
 
+  expect_warning(
+    validation_sirene(c("1", NA), type = "siret"),
+    "(essayer `type = \"siren\"` ?)"
+  )
+
   expect_equal(
-    validation_sirene(c("42", NA), type = "siret"),
-    c(FALSE, NA)
+    validation_sirene(c("77984790400034", "42", NA), type = "siret"),
+    c(FALSE, FALSE, NA)
   )
 
   expect_equal(
