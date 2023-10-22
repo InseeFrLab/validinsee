@@ -1,0 +1,10 @@
+navbar:
+  right:
+    - text: Code source
+      icon: fab fa-github fa-lg
+      href: https://github.com/InseeFrLab/validinsee
+
+reference:
+  - title: Numéros SIREN ou SIRET
+    contents:
+      - validation_sirene

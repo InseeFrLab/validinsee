@@ -5,3 +5,4 @@
 ^NEWS\.rmd$
 ^_pkgdown\.yml$
 ^\.github$
+^docs$
