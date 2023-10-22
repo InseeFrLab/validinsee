@@ -20,7 +20,7 @@ Siret.
 
 ``` r
 # install.packages("remotes")
-devtools::install_github("InseeFrLab/validinsee")
+remotes::install_github("InseeFrLab/validinsee")
 ```
 
 ## Chargement
