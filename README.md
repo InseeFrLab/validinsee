@@ -8,6 +8,7 @@
 ![GitHub top
 language](https://img.shields.io/github/languages/top/InseeFrLab/validinsee)
 [![R-CMD-check](https://github.com/InseeFrLab/validinsee/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/InseeFrLab/validinsee/actions/workflows/R-CMD-check.yaml)
+[![codecov](https://codecov.io/gh/InseeFrLab/validinsee/branch/main/graph/badge.svg)](https://codecov.io/gh/InseeFrLab/validinsee)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/validinsee)](https://cran.r-project.org/package=validinsee)
 <!-- badges: end -->
