@@ -53,7 +53,7 @@ somme_luhn <- function(id_int) {
 
 validation_sirene <- function(id, type = c("siret", "siren")) {
 
-  if (all(is.na(id))) return(id)
+  if (all(is.na(id))) return(as.logical(id))
 
   type <- match.arg(type)
 
