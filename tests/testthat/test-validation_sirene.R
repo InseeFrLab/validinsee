@@ -16,7 +16,7 @@ test_that("somme_luhn", {
   )
 
   expect_equal(
-    somme_luhn(matrix(c(9L, 7L, 3L), ncol = 3, byrow = 3)),
+    somme_luhn(matrix(c(9L, 7L, 3L), ncol = 3, byrow = TRUE)),
     17
   )
 
