@@ -85,15 +85,14 @@ produira une valeur manquante en retour.</p>
     </div>
     <div id="details">
     <h2>Details</h2>
-    <p>Pour les SIREN et SIRET, la vérification est faite sur la base de
-la <a href="https://fr.wikipedia.org/wiki/Formule_de_Luhn" class="external-link">formule de Luhn</a>.</p>
-<p>Un SIREN est valide si sa somme de Luhn est un multipe de 10.</p>
-<p>Un SIRET est valide si sa somme de Luhn est un multipe de 10 et si la somme
-de Luhn de son SIREN (9 premiers chiffres) est un multiple de 10.</p>
-<p>Les SIRET de <em>La Poste</em> (SIREN 356000000) ne respectant pas cette règle font
-l'objet d'un traitement différencié. Il seront considérés comme valides si
-la somme des chiffres les composant est un multiple de 5.</p>
-<p>Les fonctions <code>validation_siren</code> et <code>validation_siret</code> permettent d'appeler
+    <p>La vérification se base sur la
+<a href="https://fr.wikipedia.org/wiki/Formule_de_Luhn" class="external-link">formule de Luhn</a>.</p><ul><li><p>un SIREN est valide si sa somme de Luhn est un multipe de 10 ;</p></li>
+<li><p>un SIRET est valide si sa somme de Luhn est un multipe de 10 et si la somme
+de Luhn de son SIREN (9 premiers chiffres) est un multiple de 10 ;</p></li>
+<li><p>un SIRET de <em>La Poste</em> (SIREN 356000000) ne respectant pas la règle
+ci-dessus fait l'objet d'un traitement différencié : il est valide si la
+somme des chiffres le composant est un multiple de 5.</p></li>
+</ul><p>Les fonctions <code>validation_siren</code> et <code>validation_siret</code> permettent d'appeler
 <code>validation_sirene</code> sans avoir à préciser le type de numéro.</p>
     </div>
 
