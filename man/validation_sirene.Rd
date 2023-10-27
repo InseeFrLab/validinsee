@@ -4,13 +4,15 @@
 \alias{validation_sirene}
 \title{Validité de SIRET ou SIREN}
 \usage{
-validation_sirene(id, type = c("siret", "siren"))
+validation_sirene(id, type = c("siret", "siren"), warn = TRUE)
 }
 \arguments{
 \item{id}{un vecteur caractère de SIRET, ou de SIREN si \code{type = "siren"}.}
 
 \item{type}{par défaut \code{"siret"} (chaîne de caractères de 14 chiffres).
 Autre valeur possible \code{"siren"} (9 chiffres).}
+
+\item{warn}{\code{FALSE} pour désactiver d'éventuels warnings.}
 }
 \value{
 Un vecteur booléen de même longueur que \code{id}. Une valeur manquante

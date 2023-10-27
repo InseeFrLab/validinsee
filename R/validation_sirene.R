@@ -42,6 +42,7 @@ somme_luhn <- function(id_int) {
 #' @param id un vecteur caractère de SIRET, ou de SIREN si `type = "siren"`.
 #' @param type par défaut `"siret"` (chaîne de caractères de 14 chiffres).
 #'   Autre valeur possible `"siren"` (9 chiffres).
+#' @param warn `FALSE` pour désactiver d'éventuels warnings.
 #'
 #' @return Un vecteur booléen de même longueur que `id`. Une valeur manquante
 #'   produira une valeur manquante en retour.
@@ -51,7 +52,7 @@ somme_luhn <- function(id_int) {
 #' validation_sirene(c("20003452800014", "20003452800041", "a", NA)) # SIRET (14 chiffres)
 #' validation_sirene(c("200034528", "200034582", "a", NA), type = "siren")
 
-validation_sirene <- function(id, type = c("siret", "siren")) {
+validation_sirene <- function(id, type = c("siret", "siren"), warn = TRUE) {
 
   if (all(is.na(id))) return(as.logical(id))
 
@@ -64,7 +65,7 @@ validation_sirene <- function(id, type = c("siret", "siren")) {
   else
     looks_ok <- grepl("^\\d{9}$", id)
 
-  if (!any(looks_ok))
+  if (warn && !any(looks_ok))
     warning(
       "aucun id ne comporte le bon nombre de chiffres ",
       sprintf("(essayer `type = \"%s\"` ?)", chartr("nt", "tn", type))
