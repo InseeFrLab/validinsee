@@ -99,3 +99,17 @@ test_that("validation_sirene (type siret)", {
   )
 
 })
+
+test_that("alias", {
+
+  expect_equal(
+    validation_siren(c("100000009", "100000000", "42", NA)),
+    c(TRUE, FALSE, FALSE, NA)
+  )
+
+  expect_equal(
+    validation_siret(c("77984790400033", "77984790400034", "42", NA)),
+    c(TRUE, FALSE, FALSE, NA)
+  )
+
+})

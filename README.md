@@ -32,20 +32,20 @@ library(validinsee)
 
 ## Validité de numéros SIREN ou SIRET
 
-Utiliser la fonction `validation_sirene` pour vérifier si les éléments
-du vecteur sont des **SIRET** valides (identifiant de l’établissement
-formé de 14 caractères) :
+La fonction `validation_siren` vérifie si les éléments d’un vecteur sont
+des **SIREN** valides (identifiant de l’entreprise formé de 9
+caractères) :
 
 ``` r
-validation_sirene(c("20003452800014", "20003452800041", NA))
+validation_siren(c("200034528", "200034582", NA))
 #> [1]  TRUE FALSE    NA
 ```
 
-Pour vérifier que les éléments sont des **SIREN** valides (identifiant
-de l’entreprise formé de 9 caractères), préciser l’argument
-`type = "siren"` :
+La fonction `validation_siret` vérifie si les éléments d’un vecteur sont
+des **SIRET** valides (identifiant de l’établissement formé de 14
+caractères) :
 
 ``` r
-validation_sirene(c("200034528", "200034582", NA), type = "siren")
+validation_siret(c("20003452800014", "20003452800041", NA))
 #> [1]  TRUE FALSE    NA
 ```

@@ -39,6 +39,9 @@ somme_luhn <- function(id_int) {
 #' l'objet d'un traitement différencié. Il seront considérés comme valides si
 #' la somme des chiffres les composant est un multiple de 5.
 #'
+#' Les fonctions `validation_siren` et `validation_siret` permettent d'appeler
+#' `validation_sirene` sans avoir à préciser le type de numéro.
+#'
 #' @param id un vecteur caractère de SIRET, ou de SIREN si `type = "siren"`.
 #' @param type par défaut `"siret"` (chaîne de caractères de 14 chiffres).
 #'   Autre valeur possible `"siren"` (9 chiffres).
@@ -51,6 +54,10 @@ somme_luhn <- function(id_int) {
 #' @examples
 #' validation_sirene(c("20003452800014", "20003452800041", "a", NA)) # SIRET (14 chiffres)
 #' validation_sirene(c("200034528", "200034582", "a", NA), type = "siren")
+#'
+#' # utiliser les alias pour ne pas renseigner `type`
+#' validation_siret(c("20003452800014", "20003452800041", "a", NA))
+#' validation_siren(c("200034528", "200034582", "a", NA))
 
 validation_sirene <- function(id, type = c("siret", "siren"), warn = TRUE) {
 
@@ -109,3 +116,15 @@ validation_sirene <- function(id, type = c("siret", "siren"), warn = TRUE) {
   res
 
 }
+
+#' @rdname validation_sirene
+#' @export
+
+validation_siren <- function(id)
+  validation_sirene(id, type = "siren", warn = FALSE)
+
+#' @rdname validation_sirene
+#' @export
+
+validation_siret <- function(id)
+  validation_sirene(id, type = "siret", warn = FALSE)

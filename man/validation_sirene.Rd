@@ -2,9 +2,15 @@
 % Please edit documentation in R/validation_sirene.R
 \name{validation_sirene}
 \alias{validation_sirene}
+\alias{validation_siren}
+\alias{validation_siret}
 \title{Validité de SIRET ou SIREN}
 \usage{
 validation_sirene(id, type = c("siret", "siren"), warn = TRUE)
+
+validation_siren(id)
+
+validation_siret(id)
 }
 \arguments{
 \item{id}{un vecteur caractère de SIRET, ou de SIREN si \code{type = "siren"}.}
@@ -33,8 +39,15 @@ de Luhn de son SIREN (9 premiers chiffres) est un multiple de 10.
 Les SIRET de \emph{La Poste} (SIREN 356000000) ne respectant pas cette règle font
 l'objet d'un traitement différencié. Il seront considérés comme valides si
 la somme des chiffres les composant est un multiple de 5.
+
+Les fonctions \code{validation_siren} et \code{validation_siret} permettent d'appeler
+\code{validation_sirene} sans avoir à préciser le type de numéro.
 }
 \examples{
 validation_sirene(c("20003452800014", "20003452800041", "a", NA)) # SIRET (14 chiffres)
 validation_sirene(c("200034528", "200034582", "a", NA), type = "siren")
+
+# utiliser les alias pour ne pas renseigner `type`
+validation_siret(c("20003452800014", "20003452800041", "a", NA))
+validation_siren(c("200034528", "200034582", "a", NA))
 }

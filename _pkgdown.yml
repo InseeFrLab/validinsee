@@ -8,3 +8,5 @@ reference:
   - title: Numéros SIREN ou SIRET
     contents:
       - validation_sirene
+      - validation_siren
+      - validation_siret
