@@ -27,17 +27,17 @@ somme_luhn <- function(id_int) {
 #'
 #' Vérifie la validité d'un vecteur de SIRET ou de SIREN.
 #'
-#' Pour les SIREN et SIRET, la vérification est faite sur la base de
-#' la [formule de Luhn](https://fr.wikipedia.org/wiki/Formule_de_Luhn).
+#' La vérification se base sur la
+#' [formule de Luhn](https://fr.wikipedia.org/wiki/Formule_de_Luhn).
 #'
-#' Un SIREN est valide si sa somme de Luhn est un multipe de 10.
+#' - un SIREN est valide si sa somme de Luhn est un multipe de 10 ;
 #'
-#' Un SIRET est valide si sa somme de Luhn est un multipe de 10 et si la somme
-#' de Luhn de son SIREN (9 premiers chiffres) est un multiple de 10.
+#' - un SIRET est valide si sa somme de Luhn est un multipe de 10 et si la somme
+#'   de Luhn de son SIREN (9 premiers chiffres) est un multiple de 10 ;
 #'
-#' Les SIRET de *La Poste* (SIREN 356000000) ne respectant pas cette règle font
-#' l'objet d'un traitement différencié. Il seront considérés comme valides si
-#' la somme des chiffres les composant est un multiple de 5.
+#' - un SIRET de _La Poste_ (SIREN 356000000) ne respectant pas la règle
+#'   ci-dessus fait l'objet d'un traitement différencié : il est valide si la
+#'   somme des chiffres le composant est un multiple de 5.
 #'
 #' Les fonctions `validation_siren` et `validation_siret` permettent d'appeler
 #' `validation_sirene` sans avoir à préciser le type de numéro.

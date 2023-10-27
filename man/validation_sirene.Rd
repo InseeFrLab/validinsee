@@ -28,17 +28,16 @@ produira une valeur manquante en retour.
 Vérifie la validité d'un vecteur de SIRET ou de SIREN.
 }
 \details{
-Pour les SIREN et SIRET, la vérification est faite sur la base de
-la \href{https://fr.wikipedia.org/wiki/Formule_de_Luhn}{formule de Luhn}.
-
-Un SIREN est valide si sa somme de Luhn est un multipe de 10.
-
-Un SIRET est valide si sa somme de Luhn est un multipe de 10 et si la somme
-de Luhn de son SIREN (9 premiers chiffres) est un multiple de 10.
-
-Les SIRET de \emph{La Poste} (SIREN 356000000) ne respectant pas cette règle font
-l'objet d'un traitement différencié. Il seront considérés comme valides si
-la somme des chiffres les composant est un multiple de 5.
+La vérification se base sur la
+\href{https://fr.wikipedia.org/wiki/Formule_de_Luhn}{formule de Luhn}.
+\itemize{
+\item un SIREN est valide si sa somme de Luhn est un multipe de 10 ;
+\item un SIRET est valide si sa somme de Luhn est un multipe de 10 et si la somme
+de Luhn de son SIREN (9 premiers chiffres) est un multiple de 10 ;
+\item un SIRET de \emph{La Poste} (SIREN 356000000) ne respectant pas la règle
+ci-dessus fait l'objet d'un traitement différencié : il est valide si la
+somme des chiffres le composant est un multiple de 5.
+}
 
 Les fonctions \code{validation_siren} et \code{validation_siret} permettent d'appeler
 \code{validation_sirene} sans avoir à préciser le type de numéro.

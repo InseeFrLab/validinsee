@@ -49,3 +49,18 @@ caractères) :
 validation_siret(c("20003452800014", "20003452800041", NA))
 #> [1]  TRUE FALSE    NA
 ```
+
+**Méthode**
+
+La vérification se base sur la [formule de
+Luhn](https://fr.wikipedia.org/wiki/Formule_de_Luhn).
+
+-   un SIREN est valide si sa somme de Luhn est un multipe de 10 ;
+
+-   un SIRET est valide si sa somme de Luhn est un multipe de 10 et si
+    la somme de Luhn de son SIREN (9 premiers chiffres) est un multiple
+    de 10 ;
+
+-   un SIRET de *La Poste* (SIREN 356000000) ne respectant pas la règle
+    ci-dessus fait l’objet d’un traitement différencié : il est valide
+    si la somme des chiffres le composant est un multiple de 5.
