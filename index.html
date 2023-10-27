@@ -34,7 +34,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">validinsee</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0.9000</span>
       </span>
     </div>
 
@@ -89,13 +89,13 @@
 <div class="section level2">
 <h2 id="validité-de-numéros-siren-ou-siret">Validité de numéros SIREN ou SIRET<a class="anchor" aria-label="anchor" href="#validit%C3%A9-de-num%C3%A9ros-siren-ou-siret"></a>
 </h2>
-<p>Utiliser la fonction <code>validation_sirene</code> pour vérifier si les éléments du vecteur sont des <strong>SIRET</strong> valides (identifiant de l’établissement formé de 14 caractères) :</p>
+<p>La fonction <code>validation_siren</code> vérifie si les éléments d’un vecteur sont des <strong>SIREN</strong> valides (identifiant de l’entreprise formé de 9 caractères) :</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="reference/validation_sirene.html">validation_sirene</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"20003452800014"</span>, <span class="st">"20003452800041"</span>, <span class="cn">NA</span><span class="op">)</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="reference/validation_sirene.html">validation_siren</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"200034528"</span>, <span class="st">"200034582"</span>, <span class="cn">NA</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1]  TRUE FALSE    NA</span></span></code></pre></div>
-<p>Pour vérifier que les éléments sont des <strong>SIREN</strong> valides (identifiant de l’entreprise formé de 9 caractères), préciser l’argument <code>type = "siren"</code> :</p>
+<p>La fonction <code>validation_siret</code> vérifie si les éléments d’un vecteur sont des <strong>SIRET</strong> valides (identifiant de l’établissement formé de 14 caractères) :</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="reference/validation_sirene.html">validation_sirene</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"200034528"</span>, <span class="st">"200034582"</span>, <span class="cn">NA</span><span class="op">)</span>, type <span class="op">=</span> <span class="st">"siren"</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="reference/validation_sirene.html">validation_siret</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"20003452800014"</span>, <span class="st">"20003452800041"</span>, <span class="cn">NA</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1]  TRUE FALSE    NA</span></span></code></pre></div>
 </div>
 </div>
