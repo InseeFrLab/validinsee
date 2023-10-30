@@ -52,7 +52,7 @@ La fonction `validation_siret` vérifie si les éléments d'un vecteur sont des
 validation_siret(c("20003452800014", "20003452800041", NA))
 ```
 
-**Méthode**
+**Règles de validation**
 
 La vérification se base sur la
 [formule de Luhn](https://fr.wikipedia.org/wiki/Formule_de_Luhn).

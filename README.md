@@ -50,7 +50,7 @@ validation_siret(c("20003452800014", "20003452800041", NA))
 #> [1]  TRUE FALSE    NA
 ```
 
-**Méthode**
+**Règles de validation**
 
 La vérification se base sur la [formule de
 Luhn](https://fr.wikipedia.org/wiki/Formule_de_Luhn).
